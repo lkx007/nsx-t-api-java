@@ -1,0 +1,74 @@
+# ConfigurationState
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**state** | [**StateEnum**](#StateEnum) | Gives details of state of desired configuration. Additional enums with more details on progress/success/error states are sent for edge node. The success states are NODE_READY and TRANSPORT_NODE_READY, pending states are {VM_DEPLOYMENT_QUEUED, VM_DEPLOYMENT_IN_PROGRESS, REGISTRATION_PENDING} and other values indicate failures. \&quot;in_sync\&quot; state indicates that the desired configuration has been received by the host to which it applies, but is not yet in effect. When the configuration is actually in effect, the state will change to \&quot;success\&quot;. Please note, failed state is deprecated.  |  [optional]
+**details** | [**List&lt;ConfigurationStateElement&gt;**](ConfigurationStateElement.md) | Array of configuration state of various sub systems |  [optional]
+**failureCode** | **Long** | Error code |  [optional]
+**failureMessage** | **String** | Error message in case of failure |  [optional]
+
+<a name="StateEnum"></a>
+## Enum: StateEnum
+Name | Value
+---- | -----
+PENDING | &quot;pending&quot;
+IN_PROGRESS | &quot;in_progress&quot;
+SUCCESS | &quot;success&quot;
+FAILED | &quot;failed&quot;
+PARTIAL_SUCCESS | &quot;partial_success&quot;
+ORPHANED | &quot;orphaned&quot;
+UNKNOWN | &quot;unknown&quot;
+ERROR | &quot;error&quot;
+IN_SYNC | &quot;in_sync&quot;
+NOT_AVAILABLE | &quot;NOT_AVAILABLE&quot;
+VM_DEPLOYMENT_QUEUED | &quot;VM_DEPLOYMENT_QUEUED&quot;
+VM_DEPLOYMENT_IN_PROGRESS | &quot;VM_DEPLOYMENT_IN_PROGRESS&quot;
+VM_DEPLOYMENT_FAILED | &quot;VM_DEPLOYMENT_FAILED&quot;
+VM_POWER_ON_IN_PROGRESS | &quot;VM_POWER_ON_IN_PROGRESS&quot;
+VM_POWER_ON_FAILED | &quot;VM_POWER_ON_FAILED&quot;
+REGISTRATION_PENDING | &quot;REGISTRATION_PENDING&quot;
+NODE_NOT_READY | &quot;NODE_NOT_READY&quot;
+NODE_READY | &quot;NODE_READY&quot;
+VM_POWER_OFF_IN_PROGRESS | &quot;VM_POWER_OFF_IN_PROGRESS&quot;
+VM_POWER_OFF_FAILED | &quot;VM_POWER_OFF_FAILED&quot;
+VM_UNDEPLOY_IN_PROGRESS | &quot;VM_UNDEPLOY_IN_PROGRESS&quot;
+VM_UNDEPLOY_FAILED | &quot;VM_UNDEPLOY_FAILED&quot;
+VM_UNDEPLOY_SUCCESSFUL | &quot;VM_UNDEPLOY_SUCCESSFUL&quot;
+EDGE_CONFIG_ERROR | &quot;EDGE_CONFIG_ERROR&quot;
+VM_DEPLOYMENT_RESTARTED | &quot;VM_DEPLOYMENT_RESTARTED&quot;
+REGISTRATION_FAILED | &quot;REGISTRATION_FAILED&quot;
+TRANSPORT_NODE_SYNC_PENDING | &quot;TRANSPORT_NODE_SYNC_PENDING&quot;
+TRANSPORT_NODE_CONFIGURATION_MISSING | &quot;TRANSPORT_NODE_CONFIGURATION_MISSING&quot;
+EDGE_HARDWARE_NOT_SUPPORTED | &quot;EDGE_HARDWARE_NOT_SUPPORTED&quot;
+MULTIPLE_OVERLAY_TZS_NOT_SUPPORTED | &quot;MULTIPLE_OVERLAY_TZS_NOT_SUPPORTED&quot;
+TN_OVERLAY_TZ_IN_USE_BY_EDGE_CLUSTER | &quot;TN_OVERLAY_TZ_IN_USE_BY_EDGE_CLUSTER&quot;
+TZ_ENDPOINTS_NOT_SPECIFIED | &quot;TZ_ENDPOINTS_NOT_SPECIFIED&quot;
+NO_PNIC_PREPARED_IN_EDGE | &quot;NO_PNIC_PREPARED_IN_EDGE&quot;
+APPLIANCE_INTERNAL_ERROR | &quot;APPLIANCE_INTERNAL_ERROR&quot;
+VTEP_DHCP_NOT_SUPPORTED | &quot;VTEP_DHCP_NOT_SUPPORTED&quot;
+UNSUPPORTED_HOST_SWITCH_PROFILE | &quot;UNSUPPORTED_HOST_SWITCH_PROFILE&quot;
+UPLINK_HOST_SWITCH_PROFILE_NOT_SPECIFIED | &quot;UPLINK_HOST_SWITCH_PROFILE_NOT_SPECIFIED&quot;
+HOSTSWITCH_PROFILE_NOT_FOUND | &quot;HOSTSWITCH_PROFILE_NOT_FOUND&quot;
+LLDP_SEND_ENABLED_NOT_SUPPORTED | &quot;LLDP_SEND_ENABLED_NOT_SUPPORTED&quot;
+UNSUPPORTED_NAMED_TEAMING_POLICY | &quot;UNSUPPORTED_NAMED_TEAMING_POLICY&quot;
+LBSRCID_NOT_SUPPORTED_FOR_EDGE_VM | &quot;LBSRCID_NOT_SUPPORTED_FOR_EDGE_VM&quot;
+LACP_NOT_SUPPORTED_FOR_EDGE_VM | &quot;LACP_NOT_SUPPORTED_FOR_EDGE_VM&quot;
+STANDBY_UPLINKS_NOT_SUPPORTED_FOR_EDGE_VM | &quot;STANDBY_UPLINKS_NOT_SUPPORTED_FOR_EDGE_VM&quot;
+MULTIPLE_ACTIVE_UPLINKS_NOT_SUPPORTED_FOR_EDGE | &quot;MULTIPLE_ACTIVE_UPLINKS_NOT_SUPPORTED_FOR_EDGE&quot;
+UNSUPPORTED_LACP_LB_ALGO_FOR_NODE | &quot;UNSUPPORTED_LACP_LB_ALGO_FOR_NODE&quot;
+EDGE_NODE_VERSION_NOT_SUPPORTED | &quot;EDGE_NODE_VERSION_NOT_SUPPORTED&quot;
+NO_PNIC_SPECIFIED_IN_TN | &quot;NO_PNIC_SPECIFIED_IN_TN&quot;
+INVALID_PNIC_DEVICE_NAME | &quot;INVALID_PNIC_DEVICE_NAME&quot;
+TRANSPORT_NODE_READY | &quot;TRANSPORT_NODE_READY&quot;
+VM_NETWORK_EDIT_PENDING | &quot;VM_NETWORK_EDIT_PENDING&quot;
+UNSUPPORTED_DEFAULT_TEAMING_POLICY | &quot;UNSUPPORTED_DEFAULT_TEAMING_POLICY&quot;
+MPA_DISCONNECTED | &quot;MPA_DISCONNECTED&quot;
+VM_RENAME_PENDING | &quot;VM_RENAME_PENDING&quot;
+VM_CONFIG_EDIT_PENDING | &quot;VM_CONFIG_EDIT_PENDING&quot;
+VM_NETWORK_EDIT_FAILED | &quot;VM_NETWORK_EDIT_FAILED&quot;
+VM_RENAME_FAILED | &quot;VM_RENAME_FAILED&quot;
+VM_CONFIG_EDIT_FAILED | &quot;VM_CONFIG_EDIT_FAILED&quot;
+VM_CONFIG_DISCREPANCY | &quot;VM_CONFIG_DISCREPANCY&quot;
+VM_NODE_REFRESH_FAILED | &quot;VM_NODE_REFRESH_FAILED&quot;
+VM_PLACEMENT_REFRESH_FAILED | &quot;VM_PLACEMENT_REFRESH_FAILED&quot;
